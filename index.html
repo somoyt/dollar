@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BuyDollarBD | Best USD & Crypto Exchange in Bangladesh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f8faff 0%, #eef2fa 100%);
+      color: #1a2c3e;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+    }
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #0b2b40, #1c6e5e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      color: #3a6b5e;
+      font-weight: 500;
+    }
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 8px 18px;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #1f4e3f;
+      font-weight: 500;
+      transition: 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .contact-item:hover {
+      background: #1c6e5e;
+      color: white;
+    }
+    .hero {
+      background: linear-gradient(120deg, #103d32, #1b5e4a);
+      border-radius: 40px;
+      margin: 30px 0 40px;
+      padding: 40px 32px;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .hero-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-primary {
+      background: #ffb347;
+      color: #1e2f2a;
+    }
+    .btn-primary:hover {
+      background: #ff9f1c;
+      transform: scale(1.02);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn-secondary:hover {
+      background: white;
+      color: #1c6e5e;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 40px 0 24px 0;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background: #1c6e5e;
+      border-radius: 4px;
+    }
+    .rates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .rate-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 20px;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+      transition: 0.25s;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+    .rate-card:hover {
+      transform: translateY(-4px);
+      background: white;
+    }
+    .asset-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .asset-header i {
+      font-size: 2rem;
+      width: 40px;
+      color: #1c6e5e;
+    }
+    .rate-details {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 16px;
+    }
+    .buy-rate, .sell-rate {
+      text-align: center;
+      flex: 1;
+    }
+    .rate-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #5b6e7c;
+    }
+    .rate-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f2b26;
+    }
+    .methods-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+    .method-badge {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      border: 1px solid #dce5ec;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .orders-panel {
+      background: white;
+      border-radius: 36px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+    }
+    .orders-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .refresh-btn {
+      background: none;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .order-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .order-item {
+      background: #f9fbfd;
+      border-radius: 24px;
+      padding: 16px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 5px solid;
+    }
+    .order-item.pending { border-left-color: #f39c12; }
+    .order-item.completed { border-left-color: #2ecc71; }
+    .order-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .order-asset {
+      font-weight: 800;
+      background: #e9ecef;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+    .status-badge {
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status-pending { background: #fff3e0; color: #e67e22; }
+    .status-completed { background: #e0f7e8; color: #27ae60; }
+    .empty-orders {
+      text-align: center;
+      padding: 30px;
+      color: #7f8c8d;
+    }
+    .footer {
+      margin-top: 60px;
+      background: #0f2b26;
+      color: #ccdfda;
+      padding: 30px 0;
+      border-radius: 32px 32px 0 0;
+      text-align: center;
+    }
+    .footer a {
+      color: #ffcd94;
+      text-decoration: none;
+    }
+    @media (max-width: 760px) {
+      .container { padding: 0 18px; }
+      .hero { flex-direction: column; text-align: center; }
+      .rate-value { font-size: 1.3rem; }
+    }
+    .last-updated {
+      font-size: 0.75rem;
+      color: #5c6e7a;
+      text-align: right;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <h1>💵 BuyDollarBD</h1>
+      <p>প্রিমিয়াম এক্সচেঞ্জ রেট • ট্রাস্টেড সেবা</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/35795068364?text=Hello%20BuyDollarBD" target="_blank" class="contact-item"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:buydollarbdsupports@gmail.com" class="contact-item"><i class="far fa-envelope"></i> Support</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h2>সেরা রেটে ডলার & ক্রিপ্টো</h2>
+      <p>ব্র্যাক ব্যাংক, ইসলামী ব্যাংক, বিকাশ, নগদ সহ নির্ভরযোগ্য এক্সচেঞ্জ</p>
+    </div>
+    <div class="hero-buttons">
+      <a href="#" id="orderFormBtn" class="btn-primary"><i class="fas fa-file-alt"></i> অর্ডার করুন (Google Form)</a>
+      <a href="https://wa.me/35795068364?text=Hi%2C%20I%20want%20to%20exchange%20currency" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp এ যোগাযোগ</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-title">📊 লাইভ এক্সচেঞ্জ রেট</div>
+    <div id="ratesContainer" class="rates-grid"></div>
+    <div class="last-updated" id="rateUpdateTime"></div>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <div class="section-title">💳 গ্রহণযোগ্য পেমেন্ট মেথড</div>
+    <div id="paymentMethodsList" class="methods-cloud"></div>
+  </div>
+
+  <div class="orders-panel">
+    <div class="orders-header">
+      <h3><i class="fas fa-list-ul"></i> রিজার্ভ লিস্ট & সর্বশেষ অর্ডার</h3>
+      <button id="refreshOrdersBtn" class="refresh-btn"><i class="fas fa-sync-alt"></i> রিফ্রেশ</button>
+    </div>
+    <div id="ordersList" class="order-list">
+      <div class="empty-orders">লোড হচ্ছে অর্ডার তথ্য...</div>
+    </div>
+    <p style="font-size: 12px; margin-top: 16px; color: #4b6a5e;"><i class="fas fa-info-circle"></i> সর্বশেষ ৩টি লেনদেন (Pending/Completed) গুগল শীট থেকে স্বয়ংক্রিয়ভাবে দেখাবে।</p>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 BuyDollarBD | নিরাপদ ও দ্রুত এক্সচেঞ্জ সেবা</p>
+    <p><i class="fas fa-phone-alt"></i> +35795068364 &nbsp;|&nbsp; <i class="far fa-envelope"></i> buydollarbdsupports@gmail.com</p>
+    <p><a href="#" id="footerFormLink">অর্ডার ফর্ম</a> | <a href="https://wa.me/35795068364" target="_blank">হোয়াটসঅ্যাপ</a></p>
+  </div>
+</div>
+
+<script>
+  // ========== ⚙️ CONFIGURATION – EDIT THESE TWO URLS ==========
+  // 1. Your Google Form link (where customers place orders)
+  const GOOGLE_FORM_URL = "https://forms.gle/your_form_link_here";   // <-- REPLACE THIS
+  
+  // 2. Your Google Apps Script Web App URL (to fetch orders from Google Sheet)
+  const GOOGLE_SHEETS_API_URL = "";   // <-- PASTE YOUR WEB APP URL HERE (leave empty to use demo orders)
+  // ============================================================
+  
+  // ---------- MANUAL EXCHANGE RATES (EDIT DAILY) ----------
+  const assetsRates = [
+    { name: "Tether USDT (BEP20/TRC20)", icon: "fab fa-usdt", buy: 116.50, sell: 121.00 },
+    { name: "Binance USDT", icon: "fab fa-bitcoin", buy: 116.30, sell: 121.20 },
+    { name: "Bitcoin (BTC)", icon: "fab fa-bitcoin", buy: 4520000, sell: 4680000 },
+    { name: "Dogecoin (DOGE)", icon: "fab fa-dogecoin", buy: 13.80, sell: 15.20 },
+    { name: "Payeer USD", icon: "fas fa-wallet", buy: 115.50, sell: 120.80 },
+    { name: "AdvCash USD", icon: "fas fa-exchange-alt", buy: 115.80, sell: 121.00 },
+    { name: "WebMoney WMZ", icon: "fas fa-globe", buy: 114.90, sell: 120.50 },
+    { name: "Skrill USD", icon: "fas fa-credit-card", buy: 113.50, sell: 119.00 },
+    { name: "Neteller USD", icon: "fas fa-credit-card", buy: 113.20, sell: 118.80 },
+    { name: "PayPal USD", icon: "fab fa-paypal", buy: 112.00, sell: 117.50 }
+  ];
+  const lastRateManualUpdate = "২০২৬-০৪-০৫ (ম্যানুয়ালি আপডেট করুন)";
+  
+  const paymentMethods = ["BRAC Bank PLC", "Islami Bank Bangladesh PLC", "EBL", "Nagad", "bKash", "Rocket", "Binance Pay", "AdvCash", "Payeer", "Skrill", "Neteller"];
+  
+  // Demo fallback orders (shows when API URL is empty or fails)
+  const DEMO_ORDERS = [
+    { id: "ORD-101", asset: "USDT", type: "ক্রয়", amount: "500 USDT", status: "pending", timestamp: "২০২৬-০৪-০৫ ১০:৩০" },
+    { id: "ORD-102", asset: "Bitcoin", type: "বিক্রয়", amount: "0.02 BTC", status: "completed", timestamp: "২০২৬-০৪-০৪ ১৮:১৫" },
+    { id: "ORD-103", asset: "Dogecoin", type: "ক্রয়", amount: "2500 DOGE", status: "completed", timestamp: "২০২৬-০৪-০৪ ০৯:৪৫" }
+  ];
+  
+  // Helper functions
+  function formatNumber(num) {
+    return num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  
+  function renderRates() {
+    const container = document.getElementById('ratesContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    assetsRates.forEach(asset => {
+      const card = document.createElement('div');
+      card.className = 'rate-card';
+      card.innerHTML = `
+        <div class="asset-header"><i class="${asset.icon}"></i><span>${asset.name}</span></div>
+        <div class="rate-details">
+          <div class="buy-rate"><div class="rate-label">আমরা কিনি (Buy)</div><div class="rate-value">৳ ${formatNumber(asset.buy)}</div></div>
+          <div class="sell-rate"><div class="rate-label">আমরা বিক্রি (Sell)</div><div class="rate-value">৳ ${formatNumber(asset.sell)}</div></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    document.getElementById('rateUpdateTime').innerHTML = `<i class="far fa-clock"></i> রেট শেষ আপডেট: ${lastRateManualUpdate} (ম্যানুয়ালি সম্পাদনাযোগ্য)`;
+  }
+  
+  function renderPaymentMethods() {
+    const container = document.getElementById('paymentMethodsList');
+    if (!container) return;
+    container.innerHTML = paymentMethods.map(m => `<div class="method-badge"><i class="fas fa-check-circle"></i> ${m}</div>`).join('');
+  }
+  
+  async function fetchOrdersFromSheet() {
+    const container = document.getElementById('ordersList');
+    if (!container) return;
+    container.innerHTML = '<div class="empty-orders"><i class="fas fa-spinner fa-pulse"></i> লোড হচ্ছে অর্ডার...</div>';
+    
+    if (GOOGLE_SHEETS_API_URL && GOOGLE_SHEETS_API_URL.trim() !== "") {
+      try {
+        const res = await fetch(GOOGLE_SHEETS_API_URL, { method: 'GET', headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        if (Array.isArray(data) && data.length) {
+          displayOrders(data.slice(0,3));
+          return;
+        }
+        throw new Error();
+      } catch(e) {
+        console.warn("API failed, using demo orders");
+        displayOrders(DEMO_ORDERS);
+        container.insertAdjacentHTML('beforeend', '<div style="font-size:12px; color:#e67e22; margin-top:8px;"><i class="fas fa-exclamation-triangle"></i> API সংযোগ ব্যর্থ, ডেমো ডাটা দেখানো হচ্ছে। সঠিক Apps Script URL দিন।</div>');
+      }
+    } else {
+      displayOrders(DEMO_ORDERS);
+      container.insertAdjacentHTML('beforeend', '<div style="font-size:12px; background:#fef9e6; padding:8px; border-radius:20px; margin-top:8px;"><i class="fas fa-link"></i> লাইভ অর্ডার দেখাতে Google Apps Script URL সেট করুন (GOOGLE_SHEETS_API_URL)।</div>');
+    }
+  }
+  
+  function displayOrders(orders) {
+    const container = document.getElementById('ordersList');
+    if (!container) return;
+    if (!orders || orders.length === 0) {
+      container.innerHTML = '<div class="empty-orders">কোনো অর্ডার পাওয়া যায়নি</div>';
+      return;
+    }
+    container.innerHTML = '';
+    orders.slice(0,3).forEach(order => {
+      const statusClass = (order.status === 'completed' || order.status === 'Completed') ? 'completed' : 'pending';
+      const statusText = statusClass === 'completed' ? 'সম্পন্ন' : 'বিবেচনাধীন';
+      const statusBadgeClass = statusClass === 'completed' ? 'status-completed' : 'status-pending';
+      const assetName = order.asset || order.assetName || 'ক্রিপ্টো';
+      const transactionType = order.type || order.transactionType || 'এক্সচেঞ্জ';
+      const amountDetail = order.amount || order.quantity || '—';
+      const orderId = order.id || order.orderId || `#${Math.floor(Math.random()*1000)}`;
+      const div = document.createElement('div');
+      div.className = `order-item ${statusClass}`;
+      div.innerHTML = `
+        <div class="order-info">
+          <span class="order-asset"><i class="fas fa-exchange-alt"></i> ${assetName}</span>
+          <span class="order-detail"><strong>${transactionType}</strong> | পরিমাণ: ${amountDetail}</span>
+          <span><small>অর্ডার: ${orderId}</small></span>
+        </div>
+        <div><span class="status-badge ${statusBadgeClass}">${statusText}</span></div>
+      `;
+      container.appendChild(div);
+    });
+  }
+  
+  function setupButtons() {
+    const orderBtn = document.getElementById('orderFormBtn');
+    const footerLink = document.getElementById('footerFormLink');
+    const openForm = (e) => {
+      e.preventDefault();
+      if (GOOGLE_FORM_URL && GOOGLE_FORM_URL !== "https://forms.gle/your_form_link_here") {
+        window.open(GOOGLE_FORM_URL, '_blank');
+      } else {
+        alert("⚠️ Google Form লিংক কনফিগার করা হয়নি। index.html এ GOOGLE_FORM_URL সেট করুন।");
+      }
+    };
+    if (orderBtn) orderBtn.addEventListener('click', openForm);
+    if (footerLink) footerLink.addEventListener('click', openForm);
+  }
+  
+  // Auto refresh every 60 sec
+  let interval;
+  function startAutoRefresh() {
+    if (interval) clearInterval(interval);
+    interval = setInterval(fetchOrdersFromSheet, 60000);
+  }
+  
+  function init() {
+    renderRates();
+    renderPaymentMethods();
+    setupButtons();
+    fetchOrdersFromSheet();
+    startAutoRefresh();
+    document.getElementById('refreshOrdersBtn')?.addEventListener('click', fetchOrdersFromSheet);
+  }
+  
+  init();
+</script>
+</body>
+</html>
