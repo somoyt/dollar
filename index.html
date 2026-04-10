@@ -412,7 +412,7 @@
     if (!container) return;
     container.innerHTML = '<div class="empty-orders"><i class="fas fa-spinner fa-pulse"></i> লোড হচ্ছে অর্ডার...</div>';
     
-    if (GOOGLE_SHEETS_API_URL && GOOGLE_SHEETS_API_URL.trim() !== "") {
+    if (GOOGLE_SHEETS_API_URL && GOOGLE_SHEETS_API_URL.trim() !== "https://script.google.com/macros/s/AKfycbydcuyxZ6oOb_d88dNRqObT8naBRkYDcUZPwDe-bR6K2IbBgHxh2HQtg8lsyBL59cBMRg/exec") {
       try {
         const res = await fetch(GOOGLE_SHEETS_API_URL, { method: 'GET', headers: { 'Accept': 'application/json' } });
         if (!res.ok) throw new Error();
