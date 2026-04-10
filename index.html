@@ -310,7 +310,7 @@
       <p>ব্র্যাক ব্যাংক, ইসলামী ব্যাংক, বিকাশ, নগদ সহ নির্ভরযোগ্য এক্সচেঞ্জ</p>
     </div>
     <div class="hero-buttons">
-      <a href="#" id="orderFormBtn" class="btn-primary"><i class="fas fa-file-alt"></i> অর্ডার করুন (Google Form)</a>
+      <a href="#" id="orderFormBtn" class="btn-primary"><i class="fas fa-file-alt"></i> অর্ডার করুন</a>
       <a href="https://wa.me/35795068364?text=Hi%2C%20I%20want%20to%20exchange%20currency" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp এ যোগাযোগ</a>
     </div>
   </div>
@@ -392,8 +392,8 @@
       card.innerHTML = `
         <div class="asset-header"><i class="${asset.icon}"></i><span>${asset.name}</span></div>
         <div class="rate-details">
-          <div class="buy-rate"><div class="rate-label">আমরা কিনি (Buy)</div><div class="rate-value">৳ ${formatNumber(asset.buy)}</div></div>
-          <div class="sell-rate"><div class="rate-label">আমরা বিক্রি (Sell)</div><div class="rate-value">৳ ${formatNumber(asset.sell)}</div></div>
+          <div class="buy-rate"><div class="rate-label">Buy Rate</div><div class="rate-value">৳ ${formatNumber(asset.buy)}</div></div>
+          <div class="sell-rate"><div class="rate-label">Sell Rate</div><div class="rate-value">৳ ${formatNumber(asset.sell)}</div></div>
         </div>
       `;
       container.appendChild(card);
